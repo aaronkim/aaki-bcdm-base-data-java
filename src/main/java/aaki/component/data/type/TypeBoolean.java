@@ -4,15 +4,16 @@ package aaki.component.data.type;
  * Created by skkim on 10/11/16.
  */
 class TypeBoolean extends TypeObject<Boolean> {
-	public TypeBoolean() {
-		super();
+
+	protected TypeBoolean() {
+		super(Boolean.TYPE);
 	}
 
-	public TypeBoolean(final Boolean _data) {
-		super(_data);
+	public TypeBoolean(boolean _data) {
+		super(Boolean.TYPE, _data);
 	}
 
-	public TypeBoolean(final TypeBoolean _object) {
-		super(_object);
+	public TypeBoolean(TypeBoolean _object) {
+		super(Boolean.TYPE, _object);
 	}
 }

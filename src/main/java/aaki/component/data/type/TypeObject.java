@@ -1,20 +1,18 @@
 package aaki.component.data.type;
 
-import android.util.Log;
-
 class TypeObject<T> extends BaseDataType<T> {
 
-    public TypeObject() {
-        super();
+    public static final TypeObject<Object> NULL = new TypeObject<Object>(Object.class);
+
+    public TypeObject(Class<T> _class) {
+        super(_class);
     }
 
-    public TypeObject(final T _data) {
-        super(_data);
-        if(DEBUG) Log.d(TAG, "crete value = " + _data);
+    public TypeObject(Class<T> _class, T _data) {
+        super(_class, _data);
     }
 
-    public TypeObject(final TypeObject _object) {
-        super(_object);
-        if(DEBUG) Log.d(TAG, "crete value = " + _object.getData());
+    public TypeObject(Class<T> _class, TypeObject<T> _object) {
+        super(_class, _object);
     }
 }

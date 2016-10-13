@@ -1,26 +1,22 @@
 package aaki.component.data.type;
 
-import aaki.component.data.BuildConfig;
-
 /**
  * Created by skkim on 8/25/16.
  */
 class BaseDataType<T> extends BaseDataTypeImplement<T> {
     protected String TAG = getClass().getSimpleName();
-    protected boolean DEBUG = BuildConfig.DEBUG;
+    protected boolean DEBUG = true; //BuildConfig.DEBUG;
 
-    public static final BaseDataType<Object> EMPTY = new BaseDataType<>();
-
-    public BaseDataType() {
-        setData((T) null);
+    protected BaseDataType(Class<T> _class) {
+        super(_class);
     }
 
-    public BaseDataType(final T _data) {
+    protected BaseDataType(Class<T> _class, final T _data) {
+        super(_class);
         setData(_data);
     }
 
-    public BaseDataType(final TypeObject _object) {
-        set(_object);
+    protected BaseDataType(Class<T> _class, final BaseDataType<T> _object) {
+        this(_class, _object.getData());
     }
-
 }

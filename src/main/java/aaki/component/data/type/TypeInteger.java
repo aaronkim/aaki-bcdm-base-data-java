@@ -5,14 +5,18 @@ package aaki.component.data.type;
  */
 class TypeInteger extends TypeObject<Integer> {
 	public TypeInteger() {
-		super();
+		super(Integer.TYPE);
 	}
 
-	public TypeInteger(Integer _data) {
-		super(_data);
+	public TypeInteger(int _data) {
+		super(Integer.TYPE, _data);
+	}
+
+	public TypeInteger(short _data) {
+		super(Integer.TYPE, (int)_data);
 	}
 
 	public TypeInteger(TypeInteger _object) {
-		super(_object);
+		super(Integer.TYPE, _object);
 	}
 }

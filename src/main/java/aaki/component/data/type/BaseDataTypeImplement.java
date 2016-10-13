@@ -5,39 +5,43 @@ package aaki.component.data.type;
  */
  class BaseDataTypeImplement<T> implements BaseDataTypeInterface<T> {
 
-    private T mTypeValue = null;
+    private T mValue = null;
     private Class<T> mClassType = null;
+
+    protected BaseDataTypeImplement(Class<T> _class) {
+        mClassType = _class;
+    }
 
     @Override
     public T getData() {
-        return mTypeValue;
+        return mValue;
     }
 
     @Override
-    public void setData(T _value) {
-        mTypeValue = _value;
+    public void setData(final T _value) {
+        mValue = _value;
     }
 
     @Override
-    public TypeObject<T> get() {
-        return new TypeObject<> (mTypeValue);
+    public void setObject(TypeObject<T> _typeObject) {
+        setData(_typeObject.getData());
     }
 
     @Override
-    public void set(TypeObject _typeObject) {
-        set(_typeObject.get());
+    public String getDataType() {
+
+        return getDataClass().toString();
     }
 
-    @Override
-    public String getType() {
+    private Class<T> getDataClass() {
 
-        return mTypeValue.getClass().getSimpleName().toLowerCase();
+        return mClassType;
     }
 
     @Override
     public boolean equals(Object o) {
         return o instanceof BaseDataTypeImplement
-                && mTypeValue != null
-                && mTypeValue.equals(((BaseDataTypeImplement) o).mTypeValue);
+                && mValue != null
+                && mValue.equals(((BaseDataTypeImplement) o).mValue);
     }
 }

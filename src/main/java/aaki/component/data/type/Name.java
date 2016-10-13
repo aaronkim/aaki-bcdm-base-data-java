@@ -3,17 +3,17 @@ package aaki.component.data.type;
 /**
  * Created by skkim on 8/25/16.
  */
-public class Key extends TypeString {
+public class Name extends TypeString {
 
-    public Key() {
+    public Name() {
         super();
     }
 
-    public Key(final String _keyValue) {
+    public Name(final String _keyValue) {
         super(_keyValue);
     }
 
-    public Key(final Key _baseType) {
+    public Name(final Name _baseType) {
         super(_baseType);
     }
 }

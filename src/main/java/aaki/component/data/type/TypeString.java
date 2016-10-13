@@ -5,14 +5,14 @@ package aaki.component.data.type;
  */
 class TypeString extends TypeObject<String> {
 	public TypeString() {
-		super();
+		super(String.class);
 	}
 
 	public TypeString(String _value) {
-		super(_value);
+		super(String.class, _value);
 	}
 
 	public TypeString(TypeString _object) {
-		super(_object);
+		super(String.class, _object);
 	}
 }

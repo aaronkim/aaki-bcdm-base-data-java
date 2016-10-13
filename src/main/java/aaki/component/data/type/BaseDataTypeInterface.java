@@ -9,9 +9,9 @@ interface BaseDataTypeInterface<T> {
 
     public void setData(T _value);
 
-    public TypeObject get();
+    public void setObject(TypeObject<T> _typeObject);
 
-    public void set(TypeObject _typeObject);
+    public String getDataType();
 
-    public String getType();
+//    public Class<T> getDataClass();
 }
