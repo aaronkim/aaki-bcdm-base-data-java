@@ -1,40 +1,51 @@
 package aaki.component.data;
 
-import aaki.component.data.type.Name;
 import aaki.component.data.type.Value;
 
 /**
  * Created by skkim on 8/25/16.
  */
-public class Data {
-    private Name mName = null;
-    private Value mValue    = null;
+public class Data extends Value {
+
+    public Data(final String _nameString, final Value _value) {
+        super( _value == null ? new Value(Object.class, _nameString) : _value);
+    }
 
     public Data(final Data _data) {
-        this.mName = _data.mName;
-        this.mValue = _data.mValue;
+        this(_data.getName(), _data);
     }
 
-    public Data(final Name _name, final Value _value) {
-        this.mName = _name;
-        this.mValue = _value;
+    public Data(final String _nameString, final Integer _value) {
+        super(_nameString, _value);
+//        this(_nameString, new Value<Integer>(Integer.class, _value));
     }
 
-    public Data(final String _nameString, final Object _valueObject) {
-        this.mName = new Name(_nameString);
-        this.mValue = new Value(_valueObject);
+    public Data(final String _nameString, final Short _value) {
+        this(_nameString, new Value(_nameString, _value));
     }
 
-    public String getName() {
-        return this.mName.getData();
+    public Data(final String _nameString, final Long _value) {
+        this(_nameString, new Value(_nameString, _value));
+    }
+
+    public Data(final String _nameString, final Double _value) {
+        this(_nameString, new Value(_nameString, _value));
+    }
+
+    public Data(final String _nameString, final Float _value) {
+        this(_nameString, new Value(_nameString, _value));
+    }
+
+    public Data(final String _nameString, final Boolean _value) {
+        this(_nameString, new Value(_nameString, _value));
+    }
+
+    public Data(final String _nameString, final String _value) {
+        this(_nameString, new Value(_nameString, _value));
     }
 
     public Value getValue() {
-        return this.mValue;
-    }
-
-    public void setValue(Value _value) {
-        this.mValue = _value;
+        return this;
     }
 
     @Override
