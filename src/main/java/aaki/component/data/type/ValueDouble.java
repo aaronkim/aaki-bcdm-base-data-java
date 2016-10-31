@@ -3,9 +3,9 @@ package aaki.component.data.type;
 /**
  * Created by skkim on 10/11/16.
  */
-class ValueDouble extends ValueObject<Double> {
+public final class ValueDouble extends ValueObject<Double> {
 	public ValueDouble(final String _name) {
-		super(Double.TYPE, _name);
+		this(_name, (Double)null);
 	}
 
 	public ValueDouble(final String _name, final Double _value) {
@@ -13,7 +13,7 @@ class ValueDouble extends ValueObject<Double> {
 	}
 
 	public ValueDouble(final String _name, final Float _value) {
-		super(Double.TYPE, _name, (double)_value);
+		this(_name, _value == null ? null : _value.doubleValue());
 	}
 
 	public ValueDouble(final ValueDouble _typeObject) {

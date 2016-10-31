@@ -1,5 +1,7 @@
 package aaki.component.data.type;
 
+import java.util.UUID;
+
 /**
  * Created by skkim on 8/25/16.
  */
@@ -8,21 +10,27 @@ class DataTypeImplement<T> implements DataType<T>, DataValue<T> {
     protected boolean DEBUG = true; //BuildConfig.DEBUG;
 
     private final Class<T> mDataClassType;
-    private DataValueImplement<T> mDataValue = null;
+    private final String mName;
+    private DataValue<T> mDataValue = null;
 
-    protected DataTypeImplement(final Class<T> _dataClass) {
-        this(_dataClass, null, (T)null);
-    }
-
-    protected DataTypeImplement(final Class<T> _dataClass, final String _name, final T _value) {
+    private DataTypeImplement(final Class<T> _dataClass, final String _name, final DataValue<T> _valueObject) {
+        mName = _name;
         mDataClassType = _dataClass;
-        mDataValue = new DataValueImplement<T>(_name, _value);
+        mDataValue = _valueObject;
     }
 
-    protected DataTypeImplement(final DataTypeImplement<T> _typeObject) {
+    DataTypeImplement(final Class<T> _dataClass, final String _name) {
+        this(_dataClass, _name, new DataValueImplement<T>((T)null));
+    }
+
+    DataTypeImplement(final Class<T> _dataClass, final String _name, final T _value) {
+        this(_dataClass, _name, new DataValueImplement<T>(_value));
+    }
+
+    DataTypeImplement(final DataType<T> _typeObject) {
         this(_typeObject == null ? null : _typeObject.getDataClass(),
                 (_typeObject == null) ? null : _typeObject.getName(),
-                (_typeObject == null) ? null : _typeObject.getData());
+                (_typeObject == null) ? null : ((DataTypeImplement<T>)_typeObject).mDataValue);
     }
 
     @Override
@@ -39,7 +47,12 @@ class DataTypeImplement<T> implements DataType<T>, DataValue<T> {
 
     @Override
     public String getName() {
-        return mDataValue == null ? null : mDataValue.getName();
+        return mName;
+    }
+
+    @Override
+    public UUID getUUID() {
+        return mDataValue == null ? null : mDataValue.getUUID();
     }
 
     @Override
@@ -49,7 +62,9 @@ class DataTypeImplement<T> implements DataType<T>, DataValue<T> {
 
     @Override
     public void setData(T _data) {
-        if (mDataValue != null) {
+        if (mDataValue == null) {
+            mDataValue = new DataValueImplement<T>(_data);
+        } else {
             mDataValue.setData(_data);
         }
     }
@@ -57,10 +72,10 @@ class DataTypeImplement<T> implements DataType<T>, DataValue<T> {
     @Override
     public boolean equals(Object o) {
         return o != null
-                && o instanceof DataTypeImplement
+                && o instanceof DataType
                 && super.equals(o)
                 && getDataClass() != null
-                && getDataClass().equals(((DataTypeImplement) o).getDataClass());
+                && getDataClass().equals(((DataType) o).getDataClass());
     }
 
 

@@ -1,14 +1,14 @@
 package aaki.component.data;
 
-import aaki.component.data.type.Value;
+import aaki.component.data.type.ValueImplement;
 
 /**
  * Created by skkim on 8/25/16.
  */
-public class Data extends Value {
+public class Data extends ValueImplement {
 
-    public Data(final String _nameString, final Value _value) {
-        super( _value == null ? new Value(Object.class, _nameString) : _value);
+    public Data(final String _nameString, final ValueImplement _value) {
+        super( _value == null ? new ValueImplement(Object.class, _nameString) : _value);
     }
 
     public Data(final Data _data) {
@@ -21,30 +21,30 @@ public class Data extends Value {
     }
 
     public Data(final String _nameString, final Short _value) {
-        this(_nameString, new Value(_nameString, _value));
+        this(_nameString, new ValueImplement(_nameString, _value));
     }
 
     public Data(final String _nameString, final Long _value) {
-        this(_nameString, new Value(_nameString, _value));
+        this(_nameString, new ValueImplement(_nameString, _value));
     }
 
     public Data(final String _nameString, final Double _value) {
-        this(_nameString, new Value(_nameString, _value));
+        this(_nameString, new ValueImplement(_nameString, _value));
     }
 
     public Data(final String _nameString, final Float _value) {
-        this(_nameString, new Value(_nameString, _value));
+        this(_nameString, new ValueImplement(_nameString, _value));
     }
 
     public Data(final String _nameString, final Boolean _value) {
-        this(_nameString, new Value(_nameString, _value));
+        this(_nameString, new ValueImplement(_nameString, _value));
     }
 
     public Data(final String _nameString, final String _value) {
-        this(_nameString, new Value(_nameString, _value));
+        this(_nameString, new ValueImplement(_nameString, _value));
     }
 
-    public Value getValue() {
+    public ValueImplement getValue() {
         return this;
     }
 

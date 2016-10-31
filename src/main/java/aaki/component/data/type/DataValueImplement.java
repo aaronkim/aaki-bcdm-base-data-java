@@ -1,28 +1,32 @@
 package aaki.component.data.type;
 
+import java.util.UUID;
+
 class DataValueImplement<T> implements DataValue<T> {
+    protected String TAG = getClass().getSimpleName();
+    protected boolean DEBUG = true; //BuildConfig.DEBUG;
 
-    public final static  DataValueImplement<Object> NULL = new DataValueImplement<>("null");
+    public final static  DataValueImplement<Object> NULL = new DataValueImplement<>(new Object());
 
-    private final String mName;
+    private final UUID mUUID;
     private T mValue = null;
 
-    protected DataValueImplement(final String _name, final T _value) {
-        mName = (_name == null) ? NULL.getName() : _name;
+    private DataValueImplement(final UUID _uuid, final T _value) {
+        mUUID = _uuid;
         mValue = _value;
     }
 
-    protected DataValueImplement(final String _name) {
-        this(_name, (T) null);
+    DataValueImplement(final T _value) {
+        this(UUID.randomUUID(), _value);
     }
 
-    protected DataValueImplement(final DataValue<T> _dataValue) {
-        this(_dataValue == null ? null : _dataValue.getName(), _dataValue == null ? null : _dataValue.getData());
+    DataValueImplement(final DataValue<T> _dataValue) {
+        this(_dataValue == null ? null : _dataValue.getUUID(), _dataValue == null ? null : _dataValue.getData());
     }
 
     @Override
-    public String getName() {
-        return mName;
+    public UUID getUUID() {
+        return mUUID;
     }
 
     @Override
@@ -39,8 +43,8 @@ class DataValueImplement<T> implements DataValue<T> {
     public boolean equals(Object o) {
         return o != null
                 && o instanceof DataValueImplement
-                && getName() != null
-                && getName().equals(((DataValueImplement) o).getName())
+                && getUUID() != null
+                && getUUID().equals(((DataValueImplement) o).getUUID())
                 && getData() != null
                 && getData().equals(((DataValueImplement) o).getData());
     }

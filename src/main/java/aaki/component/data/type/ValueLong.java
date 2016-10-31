@@ -3,9 +3,9 @@ package aaki.component.data.type;
 /**
  * Created by skkim on 10/11/16.
  */
-class ValueLong extends ValueObject<Long> {
+public final class ValueLong extends ValueObject<Long> {
 	public ValueLong(final String _name) {
-		super(Long.TYPE, _name);
+		this(_name, (Long)null);
 	}
 
 	public ValueLong(final String _name, final Long _data) {
@@ -13,11 +13,11 @@ class ValueLong extends ValueObject<Long> {
 	}
 
 	public ValueLong(final String _name, final Integer _data) {
-		super(Long.TYPE, _name, (long)_data);
+		this(_name, _data == null ? null : _data.longValue());
 	}
 
 	public ValueLong(final String _name, final Short _data) {
-		super(Long.TYPE, _name, (long)_data);
+		this(_name, _data == null ? null : _data.longValue());
 	}
 
 	public ValueLong(ValueLong _typeObject) {

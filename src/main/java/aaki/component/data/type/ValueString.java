@@ -3,9 +3,9 @@ package aaki.component.data.type;
 /**
  * Created by skkim on 10/11/16.
  */
-class ValueString extends ValueObject<String> {
+public final class ValueString extends ValueObject<String> {
 	public ValueString(final String _name) {
-		super(String.class, _name);
+		this(_name, null);
 	}
 
 	public ValueString(final String _name, final String _value) {
