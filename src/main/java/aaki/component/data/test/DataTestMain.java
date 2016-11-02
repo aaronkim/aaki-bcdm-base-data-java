@@ -1,12 +1,12 @@
 package aaki.component.data.test;
 
-import aaki.component.data.type.DataType;
-import aaki.component.data.type.ValueBoolean;
-import aaki.component.data.type.ValueDouble;
-import aaki.component.data.type.ValueImplement;
-import aaki.component.data.type.ValueInteger;
-import aaki.component.data.type.ValueLong;
-import aaki.component.data.type.ValueString;
+import aaki.component.data.value.DataType;
+import aaki.component.data.value.ValueBoolean;
+import aaki.component.data.value.ValueDouble;
+import aaki.component.data.value.ValueInteger;
+import aaki.component.data.value.ValueLong;
+import aaki.component.data.value.ValueString;
+import jdk.nashorn.internal.parser.JSONParser;
 
 /**
  * Created by skkim on 10/13/16.
@@ -29,6 +29,15 @@ public class DataTestMain {
 
 	private static void testValue() {
 
+//		Value value = Value.Type.Integer;
+
+	}
+
+	private static void testType() {
+//		Type type = Type.Integer;
+//		Value.Type valueType = Value.Type.Integer;
+
+
 	}
 
 	private static void testNewData() {
@@ -45,8 +54,6 @@ public class DataTestMain {
 
 		name = "data4";
 		logData(new ValueString(name), lodId++);
-
-
 	}
 
 	private static void testNullData() {
@@ -78,10 +85,17 @@ public class DataTestMain {
 		System.out.println("TEST(" + id + ")::getData() = " + _value.getData());
 	}
 
-	private static void logData(ValueImplement _value, int id) {
-		System.out.println();
-		System.out.println("TEST(" + id + ")::getName() = " + _value.getName());
-		System.out.println("TEST(" + id + ")::getDataType() = " + _value.getDataType());
-		System.out.println("TEST(" + id + ")::getData() = " + _value.getData());
+//	private static void logData(ValueImplement _value, int id) {
+//		System.out.println();
+//		System.out.println("TEST(" + id + ")::getName() = " + _value.getName());
+//		System.out.println("TEST(" + id + ")::getDataType() = " + _value.getDataType());
+//		System.out.println("TEST(" + id + ")::getData() = " + _value.getData());
+//	}
+
+
+	private void testJson() {
+
+		JSONParser parser;
+
 	}
 }

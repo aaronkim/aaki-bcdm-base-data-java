@@ -1,11 +1,11 @@
-package aaki.component.data.type;
+package aaki.component.data.value;
 
 import java.util.UUID;
 
 /**
  * Created by skkim on 8/25/16.
  */
-class DataTypeImplement<T> implements DataType<T>, DataValue<T> {
+class DataTypeImplement<T> implements DataType<T> {
     protected String TAG = getClass().getSimpleName();
     protected boolean DEBUG = true; //BuildConfig.DEBUG;
 

@@ -1,11 +1,11 @@
-package aaki.component.data.type;
+package aaki.component.data.value;
 
 import java.util.UUID;
 
 /**
  * Created by skkim on 10/18/16.
  */
-public interface DataValue<T> {
+interface DataValue<T> {
 
 	public UUID getUUID();
 

@@ -1,4 +1,4 @@
-package aaki.component.data.type;
+package aaki.component.data.value;
 
 import java.util.UUID;
 

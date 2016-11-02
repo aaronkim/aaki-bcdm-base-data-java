@@ -1,4 +1,4 @@
-package aaki.component.data.type;
+package aaki.component.data.value;
 
 /**
  * Created by skkim on 10/11/16.
