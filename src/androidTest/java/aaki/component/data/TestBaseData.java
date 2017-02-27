@@ -1,7 +1,7 @@
-package aaki.component.data;
+package aaki.base.data;
 
-import aaki.component.data.type.Name;
-import aaki.component.data.type.Value;
+import aaki.base.data.type.Name;
+import aaki.base.data.type.Value;
 
 /**
  * Created by skkim on 10/11/16.

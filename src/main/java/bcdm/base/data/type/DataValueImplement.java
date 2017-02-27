@@ -1,4 +1,4 @@
-package aaki.component.data.type;
+package bcdm.base.data.type;
 
 import java.util.UUID;
 

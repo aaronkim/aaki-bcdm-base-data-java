@@ -1,4 +1,4 @@
-package aaki.component.data.container;
+package bcdm.base.data.container;
 
 /**
  * Created by skkim on 8/25/16.

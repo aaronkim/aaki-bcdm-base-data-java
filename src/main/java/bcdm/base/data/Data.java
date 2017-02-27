@@ -1,6 +1,6 @@
-package aaki.component.data;
+package bcdm.base.data;
 
-import aaki.component.data.type.ValueImplement;
+import bcdm.base.data.type.ValueImplement;
 
 /**
  * Created by skkim on 8/25/16.

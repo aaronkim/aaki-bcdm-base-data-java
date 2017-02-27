@@ -1,12 +1,12 @@
-package aaki.component.data.test;
+package bcdm.base.data.test;
 
-import aaki.component.data.type.DataType;
-import aaki.component.data.type.ValueBoolean;
-import aaki.component.data.type.ValueDouble;
-import aaki.component.data.type.ValueImplement;
-import aaki.component.data.type.ValueInteger;
-import aaki.component.data.type.ValueLong;
-import aaki.component.data.type.ValueString;
+import bcdm.base.data.type.DataType;
+import bcdm.base.data.type.ValueBoolean;
+import bcdm.base.data.type.ValueDouble;
+import bcdm.base.data.type.ValueImplement;
+import bcdm.base.data.type.ValueInteger;
+import bcdm.base.data.type.ValueLong;
+import bcdm.base.data.type.ValueString;
 
 /**
  * Created by skkim on 10/13/16.

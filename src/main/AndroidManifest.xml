@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="aaki.component.data">
+    package="aaki.base.data">
 
     <application android:allowBackup="true">
 

@@ -1,4 +1,4 @@
-package aaki.component.data.type;
+package bcdm.base.data.type;
 
 /**
  * Created by skkim on 8/25/16.
