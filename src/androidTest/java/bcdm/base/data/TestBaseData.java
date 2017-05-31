@@ -1,7 +1,7 @@
-package aaki.base.data;
+package bcdm.base.data;
 
-import aaki.base.data.type.Name;
-import aaki.base.data.type.Value;
+import bcdm.base.data.type.Name;
+import bcdm.base.data.type.Value;
 
 /**
  * Created by skkim on 10/11/16.

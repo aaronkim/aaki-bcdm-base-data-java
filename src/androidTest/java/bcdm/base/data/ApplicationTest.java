@@ -1,4 +1,4 @@
-package aaki.base.data;
+package bcdm.base.data;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
