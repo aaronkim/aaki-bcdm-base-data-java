@@ -1,8 +1,5 @@
 package bcdm.base.data;
 
-import bcdm.base.data.type.Name;
-import bcdm.base.data.type.Value;
-
 /**
  * Created by skkim on 10/11/16.
  */
