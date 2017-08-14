@@ -6,7 +6,7 @@ import bcdm.base.data.api.iValue;
  * Created by skkim on 6/7/17.
  */
 
-class ValueObject<T extends Object> implements iValue<T> {
+class ValueObject <T extends Object> implements iValue<T> {
 
 	private final String mName;
 	private T mValue;
