@@ -1,58 +1,51 @@
 package bcdm.base.data;
 
-import bcdm.base.data.type.ValueImplement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import bcdm.base.data.api.iData;
+import bcdm.base.data.api.iValue;
 
 /**
- * Created by skkim on 8/25/16.
+ * Created by skkim on 6/9/17.
  */
-public class Data extends ValueImplement {
 
-    public Data(final String _nameString, final ValueImplement _value) {
-        super( _value == null ? new ValueImplement(Object.class, _nameString) : _value);
-    }
+public class Data implements iData {
+	private final Map<String, iValue> mValueMap = new HashMap<>();
 
-    public Data(final Data _data) {
-        this(_data.getName(), _data);
-    }
+	@Override
+	public List<String> getNames() {
+		return new ArrayList<>(mValueMap.keySet());
+	}
 
-    public Data(final String _nameString, final Integer _value) {
-        super(_nameString, _value);
-//        this(_nameString, new Value<Integer>(Integer.class, _value));
-    }
+	@Override
+	public iValue getValue(final String _name) {
+		return mValueMap.get(_name);
+	}
 
-    public Data(final String _nameString, final Short _value) {
-        this(_nameString, new ValueImplement(_nameString, _value));
-    }
+	@Override
+	public void setValue(final iValue _value) {
+		if(_value == null) {
+//			throw new NullPointerException();
+			return;
+		}
 
-    public Data(final String _nameString, final Long _value) {
-        this(_nameString, new ValueImplement(_nameString, _value));
-    }
+		mValueMap.put(_value.NAME(), _value);
+	}
 
-    public Data(final String _nameString, final Double _value) {
-        this(_nameString, new ValueImplement(_nameString, _value));
-    }
+	@Override
+	public void setData(final iData _data) {
+		if(_data == null) {
+//			throw new NullPointerException();
+			return;
+		}
 
-    public Data(final String _nameString, final Float _value) {
-        this(_nameString, new ValueImplement(_nameString, _value));
-    }
+		List<String> names = _data.getNames();
 
-    public Data(final String _nameString, final Boolean _value) {
-        this(_nameString, new ValueImplement(_nameString, _value));
-    }
-
-    public Data(final String _nameString, final String _value) {
-        this(_nameString, new ValueImplement(_nameString, _value));
-    }
-
-    public ValueImplement getValue() {
-        return this;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        getName();
-        getValue().getData();
-
-        return super.equals(o);
-    }
+		for(String name : names) {
+			setValue(_data.getValue(name));
+		}
+	}
 }

@@ -2,7 +2,10 @@
     package="aaki.base.data">
 
     <application android:allowBackup="true">
-
+        <!--<intent-filter>-->
+            <!--<action android:name="bcdm.base.command.api.iCommand">-->
+            <!--</action>-->
+        <!--</intent-filter>-->
     </application>
 
 </manifest>
