@@ -13,6 +13,9 @@ import bcdm.base.data.value.ValueString;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+	public ExampleUnitTest() {
+	}
+
 	@Test
 	public void addition_isCorrect() throws Exception {
 		Assert.assertEquals(4, 2 + 2);

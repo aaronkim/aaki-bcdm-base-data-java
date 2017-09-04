@@ -1,28 +1,24 @@
-apply plugin: 'com.android.library'
+apply plugin: 'java'
 
-android {
-	compileSdkVersion 25
-	buildToolsVersion '25.0.0'
+ext {
+	javaVersion='1.8'
+}
 
-	defaultConfig {
-		minSdkVersion 19
-		targetSdkVersion 25
-		versionCode 1
-		versionName "0.1"
-	}
-	buildTypes {
-		release {
-			minifyEnabled false
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-		}
-	}
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_7
-//        targetCompatibility JavaVersion.VERSION_1_7
-//    }
+buildDir = 'build'
+
+repositories {
+	mavenCentral()
 }
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
 	testCompile 'junit:junit:4.12'
 }
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+//tasks.withType(JavaCompile) {
+//	sourceCompatibility = javaVersion
+//	targetCompatibility = javaVersion
+//}

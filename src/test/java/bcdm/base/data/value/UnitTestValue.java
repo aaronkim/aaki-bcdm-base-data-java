@@ -1,6 +1,5 @@
 package bcdm.base.data.value;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,6 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class UnitTestValue {
+	public UnitTestValue() {}
 
 	@Test
 	public void testValueObject () throws Exception {
@@ -23,12 +23,12 @@ public class UnitTestValue {
 
 		valueObject.set(testInt);
 		System.out.println("expected : " + testInt + ", actual : " + valueObject.get());
-		Assert.assertEquals(testInt, valueObject.get());
+		assertEquals(testInt, valueObject.get());
 
 
 		valueObject.set(testString);
 		System.out.println("expected : " + testString + ", actual : " + valueObject.get());
-		Assert.assertEquals(testString, valueObject.get());
+		assertEquals(testString, valueObject.get());
 	}
 
 	@Test
@@ -41,7 +41,7 @@ public class UnitTestValue {
 
 		valueObject.set(testString);
 		System.out.println("expected : " + testString + ", actual : " + valueObject.get());
-		Assert.assertEquals(testString, valueObject.get());
+		assertEquals(testString, valueObject.get());
 
 		System.out.println("expected : " + ValueString.UNLIMITED_LENGTH + ", actual : " + valueObject.MAX_LENGTH());
 		assertEquals(ValueString.UNLIMITED_LENGTH, valueObject.MAX_LENGTH());
