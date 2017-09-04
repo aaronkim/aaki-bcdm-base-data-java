@@ -1,8 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="aaki.component.data">
+    package="bcdm.base.data">
 
     <application android:allowBackup="true">
-
+        <!--<intent-filter>-->
+            <!--<action android:name="bcdm.base.command.api.iCommand">-->
+            <!--</action>-->
+        <!--</intent-filter>-->
     </application>
 
 </manifest>

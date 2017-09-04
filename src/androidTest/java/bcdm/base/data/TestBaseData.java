@@ -1,7 +1,4 @@
-package aaki.component.data;
-
-import aaki.component.data.type.Name;
-import aaki.component.data.type.Value;
+package bcdm.base.data;
 
 /**
  * Created by skkim on 10/11/16.
